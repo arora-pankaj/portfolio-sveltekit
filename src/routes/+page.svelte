@@ -1,17 +1,14 @@
-<script>
+<script lang="ts">
+	import '../app.css';
+	import PortfolioHeader from '../lib/header/PortfolioHeader.svelte';
 	import InViewContainer from '../lib/InViewContainer.svelte';
 	import SlidingTextBlocks from '../lib/SlidingTextBlocks.svelte';
 	import AppearingBlock from '../lib/AppearingBlock.svelte';
-	import PortfolioSectionCard from './PortfolioSectionCard.svelte';
-	import PortfolioContactMe from './PortfolioContactMe.svelte';
+	import PortfolioSectionCard from '../lib/PortfolioSectionCard.svelte';
+	import PortfolioContactMe from '../lib/contact/PortfolioContactMe.svelte';
 	import { currentSection } from '../lib/stores.js';
 
-	/** @type {import('./$types').PageData} */
-	export let status;
-	/** @type {import('./$types').ActionData} */
-	export let form;
-
-	const updateCurrentSection = (/** @type {any} */ event, /** @type {string} */ section) => {
+	const updateCurrentSection = (event: { detail: { inView: boolean } }, section: string) => {
 		if (event.detail.inView && section) {
 			currentSection.set(section);
 		}
@@ -23,7 +20,9 @@
 	<meta name="description" content="Pankaj Arora Dev Portfolio" />
 </svelte:head>
 
-<main class="relative">
+<PortfolioHeader />
+
+<main class="relative max-w-xl mx-auto my-6 min-h-screen">
 	<section id="page-top">
 		<InViewContainer on:InViewUpdate={(e) => updateCurrentSection(e, 'page-top')} />
 		<div class="intro-title">Hey there!</div>
@@ -34,16 +33,20 @@
 				textBlocks={['A Full Stack Engineer', 'A Java Developer', 'A DevOps Engineer', '....']}
 			/>
 		</div>
-		<a class="down-arrow" href="#about" style="margin-top: 4em;"><i /></a>
 	</section>
 
 	<section id="about">
 		<PortfolioSectionCard on:InViewUpdate={(e) => updateCurrentSection(e, 'about')}>
-			<h1>
-				02 Another Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veritatis commodi
-				nobis eligendi nemo, pariatur laudantium dolore delectus, ipsum consequuntur eius
-				repellendus, cumque laborum. Modi vitae itaque minima corporis doloribus.
-			</h1>
+			<p>
+				Front-end developer who cares deeply about user experience. Serious passion for UI design
+				and new technologies.
+			</p>
+			<br />
+			<p>
+				I'm a developer based in Brisbane, AU specializing in building elegant and performing web
+				applications. Currently, I'm focused on building exceptional JavaScript A/B tests for
+				high-profile brands at Conversion Kings.
+			</p>
 		</PortfolioSectionCard>
 	</section>
 
@@ -72,27 +75,15 @@
 
 	<section id="contact">
 		<PortfolioSectionCard on:InViewUpdate={(e) => updateCurrentSection(e, 'contact')}>
-			<PortfolioContactMe {form} {status} />
+			<PortfolioContactMe />
 		</PortfolioSectionCard>
 	</section>
-
-	<div
-		class="relative flex flex-row h-16 z-10 justify-center items-center md:fixed md:top-0 md:right-8 md:flex-col h-screen"
-	>
-		<a href="#1" class="m-2 rounded-2xl shadow">
-			<img src="favicon.png" alt="profile-icon" class="h-8 object-contain" />
-		</a>
-		<a href="#2" class="m-2 rounded-2xl shadow">
-			<img src="favicon.png" alt="profile-icon" class="h-8 object-contain" />
-		</a>
-		<a href="#3" class="m-2 rounded-2xl shadow">
-			<img src="favicon.png" alt="profile-icon" class="h-8 object-contain" />
-		</a>
-		<a href="#4" class="m-2 rounded-2xl shadow">
-			<img src="favicon.png" alt="profile-icon" class="h-8 object-contain" />
-		</a>
-	</div>
 </main>
+
+<footer class="max-w-xl mx-auto text-center leading-tight text-xs my-1 md:my-3">
+	<div>Designed & Built by Pankaj Arora</div>
+	<div>© Copyright 2022. All Rights Reserved</div>
+</footer>
 
 <style>
 	main section {
@@ -104,21 +95,14 @@
 		flex-direction: column;
 	}
 
-	.down-arrow {
-		margin-top: 1em;
-		border: 2px solid var(--accent-color);
-		border-radius: 20px;
-		padding: 15px 10px 17px 10px;
-	}
-
-	.down-arrow i {
+	/* .down-arrow {
 		border: solid var(--background-primary);
 		border-width: 0 3px 3px 0;
 		display: inline-block;
 		padding: 3px;
 		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);
-	}
+	} */
 
 	.intro-title {
 		font-family: 'Brush Script MT', Courier, sans-serif;

@@ -1,8 +1,8 @@
 import { invalid } from '@sveltejs/kit';
 import mailgun from 'mailgun-js';
-import { variables } from '../lib/variables.js';
+import { env } from '../lib/variables.js';
 
-const mg = mailgun({ apiKey: variables.mailgunApiKey, domain: variables.mailgunDomain });
+const mg = mailgun({ apiKey: env.mailgunApiKey, domain: env.mailgunDomain });
 
 /** @type {import('./$types').Actions} */
 export const actions = {

@@ -1,7 +1,8 @@
 <script>
 	import { scale } from 'svelte/transition';
 	import { goto } from '$app/navigation';
-	import { enhance, applyAction } from '$app/forms';
+	import { enhance } from '$app/forms';
+	import { socialMediaProfiles } from '../../lib/variables.js';
 	import loading from './loading.svg';
 	import checked from './checked.png';
 
@@ -23,6 +24,14 @@
 	<div class="contact-heading font-mono text-center text-3xl font-bold tracking-wider">
 		Get In Touch
 	</div>
+	<div class="my-2 flex flex-row gap-6 justify-center items-center">
+		{#each socialMediaProfiles as profile}
+			<a href={profile.url} class="rounded-full shadow bg-white">
+				<img src={profile.icon} alt={profile.name} class="h-9 w-9 rounded-full object-contain" />
+			</a>
+		{/each}
+	</div>
+	<br />
 	<div class="text-center text-s leading-4">
 		My inbox is always open. Whether you have a question or just want to say hi, send me a message!
 	</div>
@@ -31,7 +40,7 @@
 		class="flex flex-col gap-3 mt-4"
 		method="POST"
 		action="?/sendMessage"
-		use:enhance={({ form, data, action, cancel }) => {
+		use:enhance={({ form, cancel }) => {
 			if (messageFormState !== STATE_EMPTY) {
 				cancel();
 			}

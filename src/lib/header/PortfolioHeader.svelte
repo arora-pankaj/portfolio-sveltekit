@@ -1,16 +1,20 @@
 <script>
 	import { tweened } from 'svelte/motion';
-	import { currentSection } from '../lib/stores';
+	import { currentSection } from '../../lib/stores';
+	import { socialMediaProfiles } from '../../lib/variables.js';
+	import downArrow from './down-arrow.svg';
 
 	const profile = new URL('/profile-pic.png', import.meta.url).href;
 	const headerTranslate = tweened(0, { duration: 200 });
 	let scrollY = 0;
 	let prevScrollY = 0;
 	let showBurgerMenu = false;
+	let showSocialProfiles = false;
 
 	$: {
 		if (scrollY > 1 && scrollY > prevScrollY) {
 			showBurgerMenu = false;
+			showSocialProfiles = false;
 			headerTranslate.set(-4.5);
 		} else {
 			headerTranslate.set(0);
@@ -20,6 +24,10 @@
 
 	const toggleBurgerMenu = () => {
 		showBurgerMenu = !showBurgerMenu;
+	};
+
+	const toggleSocialProfiles = () => {
+		showSocialProfiles = !showSocialProfiles;
 	};
 </script>
 
@@ -64,6 +72,35 @@
 			</li>
 		</ul>
 	</nav>
+
+	<div
+		class="fixed h-fit top-0 right-0 z-50 transition-all mx-6 mt-3 rounded-full shadow-md md:relative md:mx-3"
+		style="background: var(--background-primary);"
+	>
+		<div
+			id="social-profile-arrow"
+			class="cursor-pointer select-none transition-all"
+			class:active={showSocialProfiles}
+			on:click={toggleSocialProfiles}
+		>
+			<img
+				src={downArrow}
+				alt="Social media profiles"
+				class="transition-all w-10 h-10 object-contain"
+			/>
+		</div>
+		<div
+			id="social-profiles"
+			class="my-2 flex flex-col gap-2 justify-center items-center"
+			class:active={showSocialProfiles}
+		>
+			{#each socialMediaProfiles as profile}
+				<a href={profile.url} class="rounded-full shadow bg-white">
+					<img src={profile.icon} alt={profile.name} class="h-8 w-8 rounded-full object-contain" />
+				</a>
+			{/each}
+		</div>
+	</div>
 </header>
 
 <style>
@@ -81,9 +118,9 @@
 		color: var(--text-secondary);
 	}
 
-	.on-scroll {
+	/* .on-scroll {
 		background: var(--background-tertiary);
-	}
+	} */
 
 	.menu {
 		position: fixed;
@@ -133,7 +170,7 @@
 			margin: 0 auto;
 		}
 
-    .menu-item.active::after {
+		.menu-item.active::after {
 			--size: 0.25rem;
 			content: '';
 			width: 100%;
@@ -178,5 +215,15 @@
 	#burger.active span:nth-child(3) {
 		top: 2rem;
 		transform: rotate(-135deg);
+	}
+
+	#social-profile-arrow.active {
+		transform: rotate(180deg);
+	}
+	#social-profiles {
+		display: none;
+	}
+	#social-profiles.active {
+		display: flex;
 	}
 </style>
