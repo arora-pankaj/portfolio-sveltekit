@@ -1,13 +1,13 @@
 <script>
-	import Header from '../lib/header/Header.svelte';
+	import PortfolioHeader from './PortfolioHeader.svelte';
 	import '../app.css';
 </script>
 
-<Header />
+<PortfolioHeader />
 
-<main class="max-w-xl mx-auto my-6 min-h-screen">
+<div class="max-w-xl mx-auto my-6 min-h-screen">
 	<slot />
-</main>
+</div>
 
 <footer class="max-w-xl mx-auto text-center leading-tight text-xs my-1 md:my-3">
 	<div>Designed & Built by Pankaj Arora</div>

@@ -51,7 +51,7 @@
   const out_animation = `${out_animation_name} ${out_animation_duration} ${out_animation_function} ${out_animation_delay} ${out_animation_count} ${out_animation_direction} ${out_animation_fill_mode} ${out_animation_play_state}`;
 </script>
 
-<InViewContainer {once} {top} {bottom}>
+<InViewContainer {once} {top} {bottom} on:InViewUpdate>
   <div style="animation: {animation}" slot="InView">
     <slot />
   </div>

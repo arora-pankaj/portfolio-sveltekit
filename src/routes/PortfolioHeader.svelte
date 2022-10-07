@@ -1,8 +1,8 @@
 <script>
 	import { tweened } from 'svelte/motion';
-	import { currentSection } from '../stores';
-	import profile from './profile-pic.png';
+	import { currentSection } from '../lib/stores';
 
+	const profile = new URL('/profile-pic.png', import.meta.url).href;
 	const headerTranslate = tweened(0, { duration: 200 });
 	let scrollY = 0;
 	let prevScrollY = 0;
@@ -71,18 +71,18 @@
 		font-family: inherit;
 		font-weight: 600;
 		font-size: 1.5rem;
-		color: var(--text-color);
+		color: var(--text-secondary);
 	}
 
 	#header a {
 		font-family: inherit;
 		font-weight: 600;
 		font-size: 1rem;
-		color: var(--text-color);
+		color: var(--text-secondary);
 	}
 
 	.on-scroll {
-		background: var(--background-without-opacity);
+		background: var(--background-tertiary);
 	}
 
 	.menu {
@@ -92,7 +92,7 @@
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
-		background: var(--background-with-opacity);
+		background: var(--background-primary);
 		transition: all 0.4s ease-in-out;
 		padding: 1rem 0;
 
@@ -152,7 +152,7 @@
 		width: 100%;
 		height: 0.25rem;
 		transform: rotate(0deg);
-		background-color: var(--text-color);
+		background-color: var(--text-secondary);
 		transition: 0.25s ease-in-out;
 	}
 
