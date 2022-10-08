@@ -127,6 +127,10 @@
 		background: var(--background-primary);
 	}
 
+	#menu li {
+		margin: 1rem 0;
+	}
+
 	@media only screen and (min-width: 48rem) {
 		#menu li {
 			position: relative;

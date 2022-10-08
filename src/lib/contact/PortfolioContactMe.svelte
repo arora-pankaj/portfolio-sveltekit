@@ -21,7 +21,7 @@
 </script>
 
 <div class="contact-form flex flex-col gap-2 font-serif">
-	<div class="contact-heading font-mono text-center text-3xl font-bold tracking-wider">
+	<div class="contact-heading font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider">
 		Get In Touch
 	</div>
 	<div class="my-2 flex flex-row gap-6 justify-center items-center">
@@ -37,12 +37,12 @@
 		{/each}
 	</div>
 	<br />
-	<div class="text-center text-s leading-4">
+	<div class="text-center text-sm leading-4">
 		My inbox is always open. Whether you have a question or just want to say hi, send me a message!
 	</div>
 
 	<form
-		class="flex flex-col gap-3 mt-4"
+		class="flex flex-col gap-3 mt-4 text-sm"
 		method="POST"
 		action="?/sendMessage"
 		use:enhance={({ form, cancel }) => {
