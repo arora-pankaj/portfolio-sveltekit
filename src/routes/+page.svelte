@@ -5,6 +5,8 @@
 	import SlidingTextBlocks from '../lib/SlidingTextBlocks.svelte';
 	import AppearingBlock from '../lib/AppearingBlock.svelte';
 	import PortfolioSectionCard from '../lib/PortfolioSectionCard.svelte';
+	import PortfolioAbout from '../lib/about/PortfolioAbout.svelte';
+	import PortfolioSkills from '../lib/skills/PortfolioSkills.svelte';
 	import PortfolioContactMe from '../lib/contact/PortfolioContactMe.svelte';
 	import { currentSection } from '../lib/stores.js';
 
@@ -25,46 +27,30 @@
 <main class="relative max-w-xl mx-auto my-6 min-h-screen">
 	<section id="page-top">
 		<InViewContainer on:InViewUpdate={(e) => updateCurrentSection(e, 'page-top')} />
-		<div class="intro-title">Hey there!</div>
-		<div class="intro-title">This is Pankaj Arora</div>
-		<div class="intro-subtitle">
+		<div class="font-mono text-xl">Hey there! This is</div>
+		<div class="font-arizonia text-6xl mt-4 mb-12">Pankaj Arora</div>
+		<div class="font-mono text-lg">
 			<SlidingTextBlocks
 				slidingInternal={100}
-				textBlocks={['A Full Stack Engineer', 'A Java Developer', 'A DevOps Engineer', '....']}
+				textBlocks={['A Full Stack Engineer', 'A Java Developer', 'A DevOps Engineer']}
 			/>
 		</div>
 	</section>
 
 	<section id="about">
 		<PortfolioSectionCard on:InViewUpdate={(e) => updateCurrentSection(e, 'about')}>
-			<p>
-				Front-end developer who cares deeply about user experience. Serious passion for UI design
-				and new technologies.
-			</p>
-			<br />
-			<p>
-				I'm a developer based in Brisbane, AU specializing in building elegant and performing web
-				applications. Currently, I'm focused on building exceptional JavaScript A/B tests for
-				high-profile brands at Conversion Kings.
-			</p>
+			<PortfolioAbout />
 		</PortfolioSectionCard>
 	</section>
 
 	<section id="skills">
 		<PortfolioSectionCard on:InViewUpdate={(e) => updateCurrentSection(e, 'skills')}>
-			<h1>
-				03 Animate Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veritatis commodi
-				nobis eligendi nemo, pariatur laudantium dolore delectus, ipsum consequuntur eius
-				repellendus, cumque laborum. Modi vitae itaque minima corporis doloribus.
-			</h1>
+			<PortfolioSkills />
 		</PortfolioSectionCard>
 	</section>
 
-	<section id="projects">
-		<AppearingBlock
-			blockColor={'#149'}
-			on:InViewUpdate={(e) => updateCurrentSection(e, 'projects')}
-		>
+	<section id="work">
+		<AppearingBlock blockColor={'#149'} on:InViewUpdate={(e) => updateCurrentSection(e, 'work')}>
 			<h1>
 				04 Plain Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veritatis commodi
 				nobis eligendi nemo, pariatur laudantium dolore delectus, ipsum consequuntur eius
@@ -93,25 +79,5 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-	}
-
-	/* .down-arrow {
-		border: solid var(--background-primary);
-		border-width: 0 3px 3px 0;
-		display: inline-block;
-		padding: 3px;
-		transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-	} */
-
-	.intro-title {
-		font-family: 'Brush Script MT', Courier, sans-serif;
-		font-size: 3em;
-		margin: 0.5em auto;
-	}
-
-	.intro-subtitle {
-		font-family: 'Courier New', Courier, monospace;
-		font-size: 1.2em;
 	}
 </style>

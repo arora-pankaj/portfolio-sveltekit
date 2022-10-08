@@ -2,7 +2,7 @@
 	import { scale } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { enhance } from '$app/forms';
-	import { socialMediaProfiles } from '../../lib/variables.js';
+	import { socialMediaProfiles } from '../variables';
 	import loading from './loading.svg';
 	import checked from './checked.png';
 
@@ -26,8 +26,13 @@
 	</div>
 	<div class="my-2 flex flex-row gap-6 justify-center items-center">
 		{#each socialMediaProfiles as profile}
-			<a href={profile.url} class="rounded-full shadow bg-white">
-				<img src={profile.icon} alt={profile.name} class="h-9 w-9 rounded-full object-contain" />
+			<a href={profile.url} class="rounded-full" target="_blank">
+				<img
+					src={profile.icon}
+					alt={profile.name}
+					class="h-8 w-8 rounded-full"
+					style="background-color: {profile.backgroundColor};"
+				/>
 			</a>
 		{/each}
 	</div>
