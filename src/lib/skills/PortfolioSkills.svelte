@@ -23,7 +23,8 @@
 	<div class="font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider text-center mb-4">
 		Skills
 	</div>
-	<div class="skill-matrix" style="max-width: {innerWidth * 0.7}px;">
+
+	<div id="skills-matrix" class="mx-auto grid gap-12" style="max-width: {innerWidth * 0.7}px;">
 		<img src={java} title="Java" alt="Java icon" />
 		<img src={python} title="Python" alt="Python icon" />
 		<img src={typescript} title="TypeScript" alt="TypeScript icon" />
@@ -43,14 +44,23 @@
 </div>
 
 <style>
-	.skill-matrix {
-		margin: 0 auto;
-		display: grid;
-		gap: 3rem;
+	#skills-matrix {
 		grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
 	}
 
-	.skill-matrix img {
-		width: 8rem;
+	#skills-matrix img {
+		width: 4rem;
+	}
+
+	@media (min-width: 640px) {
+		#skills-matrix img {
+			width: 5rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#skills-matrix img {
+			width: 6rem;
+		}
 	}
 </style>
