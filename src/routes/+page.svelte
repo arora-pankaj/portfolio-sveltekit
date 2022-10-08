@@ -24,7 +24,7 @@
 
 <PortfolioHeader />
 
-<main class="relative max-w-xl mx-auto my-6 min-h-screen">
+<main class="relative max-w-xl mx-auto my-2 min-h-screen">
 	<section id="page-top">
 		<InViewContainer on:InViewUpdate={(e) => updateCurrentSection(e, 'page-top')} />
 		<div class="font-mono text-sm sm:text-xl">Hey there! This is</div>

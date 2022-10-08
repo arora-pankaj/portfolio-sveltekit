@@ -28,10 +28,10 @@
 		href={resume}
 		alt="resume"
 		target="_blank"
-		class="flex flex-row px-4 py-2 items-center shadow-lg bg-violet-300 shadow-violet-900 hover:shadow-md rounded-full"
+		class="px-6 py-3 rounded-full bg-violet-300 shadow-violet-900 shadow-sm hover:shadow-inner"
 	>
 		<span class="font-serif text-sm sm:text-md">Download Resume</span>
-		<img src={downloadPic} alt="download-pic" class="w-4 h-4 ml-2" />
+		<img src={downloadPic} alt="download-pic" class="inline-block w-4 h-4 ml-2" />
 	</a>
 </div>
 
