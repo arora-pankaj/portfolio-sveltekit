@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ionLogo from './ION-Logo.png';
+	import dtuLogo from './DTU-logo.webp';
 	let innerWidth = 0;
 </script>
 
@@ -73,21 +74,20 @@
 	</div>
 	<div class="card card-main card-right card-from-left card-end">
 		<a
-			href="https://iongroup.com/"
-			class="font-sans flex flex-col gap-3 md:flex-row md:justify-between pt-2 md:pt-4"
+			href="http://dtu.ac.in/"
+			class="font-sans flex flex-col gap-3 md:flex-row-reverse md:justify-between pt-2 md:pt-4"
 		>
-			<img
-				src={ionLogo}
-				alt="ION Trading logo"
-				class="rounded-full w-32 sm:w-44 md:w-52 lg:w-56"
-				style="background-color: var(--text-primary);"
-			/>
 			<div>
 				<p>2012-2016</p>
 				<h2>Delhi Technological University</h2>
 				<p class="font-bold">Bachelor of Technology</p>
 				<p>Mathematics and Computing Engineering</p>
 			</div>
+			<img
+				src={dtuLogo}
+				alt="DTU logo"
+				class="rounded-full w-28 sm:w-40 md:w-48 lg:w-52 place-self-center"
+			/>
 		</a>
 	</div>
 </div>
