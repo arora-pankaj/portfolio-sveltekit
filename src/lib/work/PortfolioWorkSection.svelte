@@ -77,7 +77,7 @@
 			href="http://dtu.ac.in/"
 			class="font-sans flex flex-col gap-3 md:flex-row-reverse md:justify-between pt-2 md:pt-4"
 		>
-			<div>
+			<div class="flex flex-col gap-y-0 md:gap-y-2">
 				<p>2012-2016</p>
 				<h2>Delhi Technological University</h2>
 				<p class="font-bold">Bachelor of Technology</p>
@@ -86,7 +86,7 @@
 			<img
 				src={dtuLogo}
 				alt="DTU logo"
-				class="rounded-full w-28 sm:w-40 md:w-48 lg:w-52 place-self-center"
+				class="rounded-full h-28 sm:h-40 md:h-48 lg:h-52 place-self-center"
 			/>
 		</a>
 	</div>
