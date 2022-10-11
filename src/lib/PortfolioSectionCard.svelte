@@ -2,7 +2,7 @@
 	import AnimationContainer from '../lib/AnimationContainer.svelte';
 </script>
 
-<div class="mx-4 md:mx-0">
+<div class="my-1 mx-4 md:mx-0">
 	<AnimationContainer
 		on:InViewUpdate
 		animation_name={'scale-in-center'}
@@ -14,7 +14,7 @@
 		top={200}
 		bottom={200}
 	>
-		<div class="card rounded-3xl shadow-xl p-8 hover:shadow-lg hover:scale-95">
+		<div class="card rounded-3xl shadow-xl p-8 hover:shadow-lg">
 			<slot />
 		</div>
 	</AnimationContainer>

@@ -24,11 +24,11 @@
 
 <PortfolioHeader />
 
-<main class="relative max-w-xl mx-auto my-2 min-h-screen">
+<main class="relative max-w-xl mx-auto min-h-screen">
 	<section id="page-top">
 		<InViewContainer on:InViewUpdate={(e) => updateCurrentSection(e, 'page-top')} />
 		<div class="font-mono text-sm sm:text-xl">Hey there! This is</div>
-		<div class="font-arizonia text-4xl sm:text-6xl mt-4 mb-12">Pankaj Arora</div>
+		<div class="font-arizonia text-4xl sm:text-6xl mt-4 mb-8">Pankaj Arora</div>
 		<div class="font-mono text-xs sm:text-lg">
 			<SlidingTextBlocks
 				slidingInternal={100}

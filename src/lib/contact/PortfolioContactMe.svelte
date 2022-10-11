@@ -20,8 +20,11 @@
 	}
 </script>
 
-<div class="contact-form flex flex-col gap-2 font-serif">
-	<div class="contact-heading font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider">
+<div class="flex flex-col gap-2 font-serif" style="color: var(--text-primary);">
+	<div
+		class="font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider"
+		style="color: var(--text-secondary);"
+	>
 		Get In Touch
 	</div>
 	<div class="my-2 flex flex-row gap-6 justify-center items-center">
@@ -145,14 +148,6 @@
 </div>
 
 <style>
-	.contact-heading {
-		color: var(--text-secondary);
-	}
-
-	.contact-form {
-		color: var(--text-primary);
-	}
-
 	form div {
 		width: 100%;
 	}

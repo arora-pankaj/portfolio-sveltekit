@@ -2,7 +2,7 @@
 	import { tweened } from 'svelte/motion';
 	import { currentSection } from '../../lib/stores';
 	import { socialMediaProfiles } from '../variables';
-	import emoji from './hand-wave-emoji.png';
+	import profilePic from './profile-pic.png';
 	import downArrow from './down-arrow.svg';
 
 	const headerTranslate = tweened(0, { duration: 200 });
@@ -52,8 +52,7 @@
 		class="flex flex-row items-center justify-between max-w-2xl h-16 m-0 p-0 gap-x-8 md:max-w-4xl md:gap-x-32"
 	>
 		<a href="#page-top" class="relative flex flex-row items-center justify-center h-full">
-			<img src={emoji} alt="Hand wave emoji" class="w-12 h-12 mr-2 object-contain rounded-full" />
-			<div>Pankaj Arora</div>
+			<img src={profilePic} alt="Hand wave emoji" class="w-12 h-12 mr-2 object-contain rounded-full" />
 		</a>
 
 		<ul

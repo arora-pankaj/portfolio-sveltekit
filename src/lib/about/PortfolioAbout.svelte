@@ -17,8 +17,7 @@
 			<br /> <br />
 			I'm a developer specializing in building elegant and performing financial applications.
 			<br /> <br />
-			I've had the privilege of working across many different financial products as part of the merkets
-			division of
+			I've had the privilege of working across many different financial products as part of 
 			<a href="https://iongroup.com/markets/" class="underline" target="_blank">ION Group</a>. My
 			main focus these days is building a SaaS platform providing leading covenant research for the
 			credit markets across the globe.

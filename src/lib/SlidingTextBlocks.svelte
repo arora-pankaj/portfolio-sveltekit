@@ -5,7 +5,6 @@
   export let textBlocks = [''];
   const blocks = textBlocks.map((textBlock) => textBlock + ' ');
   const blocksLength = blocks.length;
-  $: sliderTextLength = blocks[blockIndex].length;
 
   let blockIndex = 0;
   let sliderIndex = 0;
@@ -13,7 +12,7 @@
 
   const updateText = () => {
     if (forward) {
-      if (sliderIndex === sliderTextLength - 1) {
+      if (sliderIndex === blocks[blockIndex].length - 1) {
         forward = false;
       } else {
         sliderIndex++;

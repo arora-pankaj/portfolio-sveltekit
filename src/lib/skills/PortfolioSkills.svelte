@@ -1,5 +1,5 @@
-<script>
-	import angular from './angular.svg';
+<script lang="ts">
+	// import angular from './angular.svg';
 	import ansible from './ansible.svg';
 	import css from './css3.svg';
 	import docker from './docker.svg';
@@ -15,52 +15,91 @@
 	import typescript from './typescript.svg';
 	import vscode from './vscode.svg';
 
-	let innerWidth = 0;
+	const skills = [
+		{ name: 'Java', icon: java },
+		{ name: 'Python', icon: python },
+		{ name: 'TypeScript', icon: typescript },
+		{ name: 'JavaScript', icon: javascript },
+		{ name: 'Relational Databases', icon: sql },
+		{ name: 'MongoDB', icon: mongodb },
+		{ name: 'Docker', icon: docker },
+		{ name: 'Jenkins', icon: jenkins },
+		{ name: 'HTML', icon: html },
+		{ name: 'CSS', icon: css },
+		{ name: 'Ansible', icon: ansible },
+		// {name: 'Angular', icon: angular},
+		{ name: 'Svelte', icon: svelte },
+		{ name: 'IntelliJ IDEA', icon: intellij },
+		{ name: 'Visual Studio Code', icon: vscode }
+	];
 </script>
 
-<svelte:window bind:innerWidth />
 <div>
-	<div class="font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider text-center mb-4">
+	<div
+		class="font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider mb-4 sm:mb-6 md:mb-8"
+		style="color: var(--text-secondary);"
+	>
 		Skills
 	</div>
 
-	<div id="skills-matrix" class="mx-auto grid gap-12" style="max-width: {innerWidth * 0.7}px;">
-		<img src={java} title="Java" alt="Java icon" />
-		<img src={python} title="Python" alt="Python icon" />
-		<img src={typescript} title="TypeScript" alt="TypeScript icon" />
-		<img src={javascript} title="JavaScript" alt="JavaScript icon" />
-		<img src={sql} title="RDBMS" alt="RDBMS icon" />
-		<img src={mongodb} title="MongoDB" alt="MongoDB icon" />
-		<img src={docker} title="Docker" alt="Docker icon" />
-		<img src={jenkins} title="Jenkins" alt="Jenkins icon" />
-		<img src={html} title="HTML" alt="HTML icon" />
-		<img src={css} title="CSS" alt="CSS icon" />
-		<img src={ansible} title="Ansible" alt="Ansible icon" />
-		<img src={angular} title="AngularJS" alt="AngularJS icon" />
-		<img src={svelte} title="Svelte" alt="Svelte icon" />
-		<img src={intellij} title="IntelliJ" alt="IntelliJ icon" />
-		<img src={vscode} title="VSCode" alt="VSCode icon" />
+	<div id="skills-matrix" class="mx-auto grid gap-12">
+		{#each skills as skill}
+			<img src={skill.icon} title={skill.name} alt={skill.name} />
+		{/each}
 	</div>
 </div>
 
 <style>
 	#skills-matrix {
-		grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+		--skill-cols: 2;
+		--skill-width: 36px;
+		min-width: calc((1 + var(--skill-cols)) * var(--skill-width));
+		grid-template-columns: repeat(auto-fit, var(--skill-width));
 	}
 
 	#skills-matrix img {
-		width: 4rem;
+		width: var(--skill-width);
 	}
 
-	@media (min-width: 640px) {
-		#skills-matrix img {
-			width: 5rem;
+	@media only screen and (min-width: 360px) {
+		#skills-matrix {
+			--skill-cols: 3;
+			--skill-width: 48px;
 		}
 	}
 
-	@media (min-width: 1024px) {
-		#skills-matrix img {
-			width: 6rem;
+	@media only screen and (min-width: 500px) {
+		#skills-matrix {
+			--skill-cols: 4;
+			--skill-width: 64px;
+		}
+	}
+
+	@media only screen and (min-width: 640px) {
+		#skills-matrix {
+			--skill-cols: 4;
+			--skill-width: 80px;
+		}
+	}
+
+	@media only screen and (min-width: 840px) {
+		#skills-matrix {
+			--skill-cols: 4;
+			--skill-width: 96px;
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		#skills-matrix {
+			--skill-cols: 6;
+			--skill-width: 100px;
+		}
+	}
+
+	@media only screen and (min-width: 1300px) {
+		#skills-matrix {
+			--skill-cols: 7;
+			--skill-width: 112px;
 		}
 	}
 </style>
