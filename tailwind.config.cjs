@@ -7,7 +7,6 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
-				sofia: ['Sofia', ...defaultTheme.fontFamily.serif],
 				arizonia: ['Arizonia', ...defaultTheme.fontFamily.serif]
 			}
 		}

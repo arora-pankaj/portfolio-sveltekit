@@ -40,12 +40,12 @@
 		{/each}
 	</div>
 	<br />
-	<div class="text-center text-sm leading-4">
+	<div class="text-center text-sm sm:text-md leading-4">
 		My inbox is always open. Whether you have a question or just want to say hi, send me a message!
 	</div>
 
 	<form
-		class="flex flex-col gap-3 mt-4 text-sm"
+		class="flex flex-col gap-3 mt-4 text-sm sm:text-md"
 		method="POST"
 		action="?/sendMessage"
 		use:enhance={({ form, cancel }) => {

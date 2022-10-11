@@ -5,7 +5,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<div class="max-w-3xl" style="width: {0.6 * innerWidth}px;">
+<div class="max-w-3xl font-serif" style="width: {0.6 * innerWidth}px;">
 	<div
 		class="font-mono text-center text-2xl sm:text-3xl font-bold tracking-wider pb-4 md:pb-6 lg:pb-8"
 		style="color: var(--text-secondary);"
@@ -24,7 +24,7 @@
 			<img
 				src={ionLogo}
 				alt="ION Trading logo"
-				class="rounded-full w-32 sm:w-44 md:w-52 lg:w-56"
+				class="rounded-2xl w-32 sm:w-44 md:w-52 lg:w-56"
 				style="background-color: var(--text-primary);"
 			/>
 		</a>
@@ -266,27 +266,6 @@
 			line-height: 1.5rem;
 			font-weight: 700;
 			letter-spacing: 0.05em;
-		}
-	}
-
-	@media only screen and (min-width: 840px) {
-		#skills-matrix {
-			--skill-cols: 4;
-			--skill-width: 96px;
-		}
-	}
-
-	@media only screen and (min-width: 1200px) {
-		#skills-matrix {
-			--skill-cols: 6;
-			--skill-width: 100px;
-		}
-	}
-
-	@media only screen and (min-width: 1300px) {
-		#skills-matrix {
-			--skill-cols: 7;
-			--skill-width: 112px;
 		}
 	}
 
