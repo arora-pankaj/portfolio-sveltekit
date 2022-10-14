@@ -31,11 +31,11 @@
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
 		<div>
-			<h3>Improve Performance of Queries on In-Memory Data</h3>
+			<h3>Realtime Data Aggregations on In-Memory Data</h3>
 			<p>
-				Implemented configurable multi-column indexes on in-memory data to improve performance of
-				SQL queries by 80%. Using XML to provide configuration of data model and index and Java for
-				implemntaiton on server.
+				Implemented configurable multi-column aggregations (like aggrgated concat) on in-memory data
+				to provide real-time results to OLAP queries. Using <strong>OLAP</strong> query format for
+				input of resultset measured and dimension and <strong>Java</strong> for implemntaiton on server.
 			</p>
 		</div>
 	</div>
@@ -43,33 +43,33 @@
 		<h3>Seamless release of Documentation to Clients</h3>
 		<p>
 			Migrated all client facing and internal documentation to version control. Automated the
-			documentation review and upload to wordpress environment using Python, and Docker. Removed the
-			delays in solution release due to documenation reviews.
+			documentation review and upload to wordpress environment using <strong>Python</strong> and
+			<strong>Docker</strong> Removed the delays in solution release due to documenation reviews.
 		</p>
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
 		<h3>Release Management Tracking Portal</h3>
 		<p>
 			Initiated, analysed, and implemented an internal portal for product management to visualise,
-			track, and create client releases using Python, and Django. Provided easy deployment using
-			Blue-Green deployment methedology.
+			track, and create client releases using <strong>Python</strong> and <strong>Django</strong>.
+			Provided easy deployment using Blue-Green deployment methedology.
 		</p>
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
 		<h3>Foreign Exchange Sales Portal</h3>
 		<p>
 			Implemented the low latency multi-threaded application to stream and aggregate prices from
-			liquidity providers using Java, and Hibernate. Responsible for setup of the CI pipeline using
-			Docker and Jenkins on AWS (EC2 and ECS).
+			liquidity providers using <strong>Java</strong> and Hibernate. Responsible for setup of CI
+			pipelines using <strong>Docker</strong> and <strong>Jenkins</strong> on AWS.
 		</p>
 	</div>
 	<div class="card card-left card-continue-top card-to-right">
 		<h3>Straight Through Processing Solution</h3>
 		<p>
 			Involved from the analysis, development to client deployments and monitoring for the solution.
-			Developed the back-office STP solution for FX trades using Java, Hibernate, and Guice. Reduced
-			the deployment time by 70% on client environments (both linux and windows machines) using
-			Ansible and Jenkins.
+			Developed the back-office STP solution for FX trades using <strong>Java</strong>, Hibernate,
+			and Guice. Reduced the deployment time by 70% on client environments (both linux and windows
+			machines) using <strong>Ansible</strong> and <strong>Jenkins</strong>.
 		</p>
 	</div>
 	<div class="card card-main card-right card-from-left card-end">
@@ -86,7 +86,7 @@
 			<img
 				src={dtuLogo}
 				alt="DTU logo"
-				class="rounded-full h-28 sm:h-40 md:h-48 lg:h-52 place-self-center"
+				class="rounded-full w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 ls:w-52 lg:h-52 place-self-end"
 			/>
 		</a>
 	</div>
