@@ -1,5 +1,5 @@
 <script lang="ts">
-	// import angular from './angular.svg';
+	import angular from './angular.svg';
 	import ansible from './ansible.svg';
 	import css from './css3.svg';
 	import docker from './docker.svg';
@@ -20,15 +20,15 @@
 		{ name: 'Python', icon: python },
 		{ name: 'TypeScript', icon: typescript },
 		{ name: 'JavaScript', icon: javascript },
+		{ name: 'HTML', icon: html },
+		{ name: 'CSS', icon: css },
+		{ name: 'Svelte', icon: svelte },
+		{ name: 'Angular', icon: angular },
 		{ name: 'Relational Databases', icon: sql },
 		{ name: 'MongoDB', icon: mongodb },
 		{ name: 'Docker', icon: docker },
 		{ name: 'Jenkins', icon: jenkins },
-		{ name: 'HTML', icon: html },
-		{ name: 'CSS', icon: css },
 		{ name: 'Ansible', icon: ansible },
-		// {name: 'Angular', icon: angular},
-		{ name: 'Svelte', icon: svelte },
 		{ name: 'IntelliJ IDEA', icon: intellij },
 		{ name: 'Visual Studio Code', icon: vscode }
 	];
