@@ -54,11 +54,11 @@
 			}
 			messageFormState = STATE_IN_PROGRESS;
 			return async ({ result }) => {
-				// form.reset();
 				if (result.type === 'error') {
 					messageFormState = STATE_ERROR;
 					await goto('/#contact');
 				} else {
+					form.reset();
 					messageFormState = STATE_SUCCESS;
 					await goto('/#contact');
 				}
