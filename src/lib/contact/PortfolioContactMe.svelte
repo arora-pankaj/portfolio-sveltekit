@@ -33,7 +33,7 @@
 				<img
 					src={profile.icon}
 					alt={profile.name}
-					class="h-8 w-8 rounded-full"
+					class="h-8 w-8 rounded-full shadow-xl hover:shadow-md"
 					style="background-color: {profile.backgroundColor};"
 				/>
 			</a>
@@ -54,7 +54,7 @@
 			}
 			messageFormState = STATE_IN_PROGRESS;
 			return async ({ result }) => {
-				form.reset();
+				// form.reset();
 				if (result.type === 'error') {
 					messageFormState = STATE_ERROR;
 					await goto('/#contact');
@@ -92,7 +92,7 @@
 		<div class="mt-2 flex flex-row justify-center">
 			<button
 				type="submit"
-				class="py-3 px-6 rounded-full shadow-md brightness-90 hover:shadow-inner"
+				class="py-3 px-6 rounded-full shadow-xl brightness-90 hover:shadow-md"
 				style={messageFormState === STATE_SUCCESS
 					? 'background-color: var(--background-secondary);'
 					: 'background-color: var(--background-primary);'}

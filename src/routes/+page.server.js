@@ -18,13 +18,14 @@ export const actions = {
 			return invalid(400, { error: true });
 		}
 
-		await mg.messages().send({
+		const response = await mg.messages().send({
 			from: 'Portfolio Message <messages@thispankaj.com>',
 			to: 'thispankajarora@gmail.com',
 			'h:Reply-To': email?.toString(),
-			subject: `Message from ${email?.toString()}`,
+			subject: 'Message from ' + email?.toString(),
 			html: createHtmlMessage(email?.toString(), phone?.toString(), message?.toString())
 		});
+		console.log(response);
 
 		return { error: false };
 	}
