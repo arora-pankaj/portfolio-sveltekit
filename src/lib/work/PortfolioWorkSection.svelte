@@ -18,7 +18,7 @@
 			class="font-sans flex flex-col gap-3 md:flex-row md:justify-between pt-2 md:pt-4"
 		>
 			<div>
-				<p>2016-Present</p>
+				<p>2016 - Present</p>
 				<h2>ION Group</h2>
 			</div>
 			<img
@@ -30,47 +30,73 @@
 		</a>
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
-		<div>
-			<h3>Realtime Data Aggregations on In-Memory Data</h3>
-			<p>
-				Implemented configurable multi-column aggregations (like aggrgated concat) on in-memory data
-				to provide real-time results to OLAP queries. Using <strong>OLAP</strong> query format for
-				input of resultset measured and dimension and <strong>Java</strong> for implemntaiton on server.
-			</p>
+		<div class="flex justify-between mb-1">
+			<h3>Acuris Xtract Research</h3>
+			<p class="team-date">Feb 2020 - Present</p>
 		</div>
+		<ul>
+			<li>
+				Document management using <b>AWS S3</b> and <b>MongoDB</b> with real-time integration with
+				Microsoft <b>SharePoint</b> using Microsoft Graph API, <b>RestAPI</b>, and <b>webhooks</b>
+			</li>
+		</ul>
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
-		<h3>Seamless release of Documentation to Clients</h3>
-		<p>
-			Migrated all client facing and internal documentation to version control. Automated the
-			documentation review and upload to wordpress environment using <strong>Python</strong> and
-			<strong>Docker</strong> Removed the delays in solution release due to documenation reviews.
-		</p>
+		<div class="flex justify-between mb-1">
+			<h3>ARC (Agregation and Reporting)</h3>
+			<p class="team-date">Nov 2020 - Jan 2022</p>
+		</div>
+		<ul>
+			<li>
+				<b>Improve performance</b> of SQL queries <b>by 80%</b> by implementing configurable
+				multi-column indexes on in-memory data.<br />
+				Using <b>XML</b> to provide configuration of data model and index and <b>Java</b> for implemntaiton
+				on server.
+			</li>
+			<li>
+				Automated release of clients facing and internal documentation from version control using
+				<b>WordPress</b>, <b>Python</b> and <b>Docker</b>.<br />
+				Removed the delays in solution release by automating the documenation reviews.
+			</li>
+		</ul>
 	</div>
 	<div class="card card-left card-continue-top card-continue-bottom">
-		<h3>Release Management Tracking Portal</h3>
-		<p>
-			Initiated, analysed, and implemented an internal portal for product management to visualise,
-			track, and create client releases using <strong>Python</strong> and <strong>Django</strong>.
-			Provided easy deployment using Blue-Green deployment methedology.
-		</p>
-	</div>
-	<div class="card card-left card-continue-top card-continue-bottom">
-		<h3>Foreign Exchange Sales Portal</h3>
-		<p>
-			Implemented the low latency multi-threaded application to stream and aggregate prices from
-			liquidity providers using <strong>Java</strong> and Hibernate. Responsible for setup of CI
-			pipelines using <strong>Docker</strong> and <strong>Jenkins</strong> on AWS.
-		</p>
+		<div class="flex justify-between mb-1">
+			<h3>ION-FX STP (WSS FX)</h3>
+			<p class="team-date">Feb 2017 - Oct 2020</p>
+		</div>
+		<ul>
+			<li>
+				Developed back-office STP (Straight Through Processing) solution for FX trades using
+				<b>Java</b>, <b>Hibernate</b> and <b>MySQL</b>.<br />
+				Involved from the initial analysis, development to client deployments and monitoring for the
+				solution.
+			</li>
+			<li>
+				Automated the client deployments and monitoring for the solution using <b>Jenkins</b>,
+				<b>Ansible</b> and <b>Nagios</b>. Reduced deployment time <b>by 70%</b> on client environments
+				(both linux and windows machines).
+			</li>
+			<li>
+				Release Management Tracking Portal<br />
+				Initiated, analysed, and implemented an internal portal for product management to visualise,
+				track, and create client releases using <b>Python</b> and <b>Django</b>. Provided easy
+				deployment using <b>blue-green deployment</b> methedology.
+			</li>
+		</ul>
 	</div>
 	<div class="card card-left card-continue-top card-to-right">
-		<h3>Straight Through Processing Solution</h3>
-		<p>
-			Involved from the analysis, development to client deployments and monitoring for the solution.
-			Developed the back-office STP solution for FX trades using <strong>Java</strong>, Hibernate,
-			and Guice. Reduced the deployment time by 70% on client environments (both linux and windows
-			machines) using <strong>Ansible</strong> and <strong>Jenkins</strong>.
-		</p>
+		<div class="flex justify-between mb-1">
+			<h3>Foreign Exchange Sales Portal</h3>
+			<p class="team-date">July 2016 - Jan 2017</p>
+		</div>
+		<ul>
+			<li>
+				Implemented low latency multi threaded application to stream and aggregate prices from
+				liquidity providers using <b>Java</b>. Responsible for setup of the CI pipeline using
+				<b>Docker</b> and <b>Jenkins</b>.
+			</li>
+		</ul>
 	</div>
 	<div class="card card-main card-right card-from-left card-end">
 		<a
@@ -86,7 +112,7 @@
 			<img
 				src={dtuLogo}
 				alt="DTU logo"
-				class="rounded-full w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 ls:w-52 lg:h-52 place-self-end"
+				class="rounded-full w-32 h-28 sm:w-44 sm:h-40 md:w-52 md:h-48 lg:w-56 lg:h-52 place-self-end"
 			/>
 		</a>
 	</div>
@@ -231,6 +257,19 @@
 		letter-spacing: 0.05em;
 	}
 
+	.card .team-date {
+		display: none;
+	}
+
+	.card ul {
+		padding-left: 0.75rem;
+		list-style-type: disc;
+	}
+	.card li {
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+
 	@media only screen and (min-width: 360px) {
 		.card p {
 			font-size: 0.875rem;
@@ -247,6 +286,10 @@
 			line-height: 1.25rem;
 			font-weight: 700;
 			letter-spacing: 0.05em;
+		}
+		.card li {
+			font-size: 0.875rem;
+			line-height: 1.25rem;
 		}
 	}
 
@@ -266,6 +309,13 @@
 			line-height: 1.5rem;
 			font-weight: 700;
 			letter-spacing: 0.05em;
+		}
+		.card .team-date {
+			display: inline-block;
+		}
+		.card li {
+			font-size: 1rem;
+			line-height: 1.5rem;
 		}
 	}
 
