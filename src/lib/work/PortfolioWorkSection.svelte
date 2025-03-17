@@ -1,4 +1,5 @@
 <script lang="ts">
+	import amazonLogo from './Amazon-Logo.png';
 	import ionLogo from './ION-Logo.png';
 	import dtuLogo from './DTU-logo.webp';
 	let innerWidth = 0;
@@ -13,12 +14,91 @@
 		Timeline
 	</div>
 	<div class="card card-main card-left card-start card-continue-bottom">
+		<a href="https://iongroup.com/" class="font-sans flex flex-col md:flex-row md:justify-between">
+			<div>
+				<p>2023 - Present</p>
+				<h2>ION Group</h2>
+			</div>
+			<img
+				src={ionLogo}
+				alt="ION Trading logo"
+				class="rounded-2xl w-32 sm:w-44 md:w-52 lg:w-56"
+				style="background-color: var(--text-primary);"
+			/>
+		</a>
+	</div>
+	<div class="card card-left card-continue-top card-continue-bottom">
+		<div class="flex justify-between mb-1">
+			<h3>Development Manager Responsibilities</h3>
+			<p class="team-date">Jan 2024 - Present</p>
+		</div>
+		<ul>
+			<li>
+				Leading a high-performing global development team of <b>20+ engineers</b>, driving
+				collaboration across multiple time zones
+			</li>
+			<li>
+				Spearheading cross-functional initiatives to enhance development workflows, optimize delivery timelines, and maintain high-quality standards and Mentoring and empowering team members, fostering a culture of ownership, and continuous learning
+			</li>
+			<li>
+				<b>Recruitment & Campus Placement</b> - Developed and implemented standardized online assessments
+				using <b>HackerRank</b> which were utilized <b>organization-wide</b> to streamline recruitment for both graduate
+				and experienced candidates
+			</li>
+		</ul>
+	</div>
+	<div class="card card-left card-continue-top card-to-right">
+		<div class="flex justify-between mb-1">
+			<h3>DBX</h3>
+			<p class="team-date">Feb 2023 - Present</p>
+		</div>
+		<ul>
+			<li>Developed Remote Digital Signature workflow as a service for bank's customers</li>
+			<li>
+				Developed products marketplace for retail and corporate customers of the banks with self
+				purchase and appointment booking process
+			</li>
+			<li>
+				Contributed towards creating an automated Loan approval workflow using <b>Kogito BPMN</b>
+				and <b>Quarkus</b> applications
+			</li>
+			<li>
+				Automated deployment of <b>Quarkus</b> Java applications in <b>Kubernetes</b> clusters
+			</li>
+		</ul>
+	</div>
+	<div class="card card-main card-right card-from-left card-continue-bottom">
+		<a
+			href="https://aws.amazon.com/just-walk-out/"
+			class="font-sans flex flex-col md:flex-row-reverse md:justify-between"
+		>
+			<div class="flex flex-col">
+				<p>2022 - 2023</p>
+				<h2>Amazon</h2>
+			</div>
+			<img
+				src={amazonLogo}
+				alt="Amazon logo"
+				class="rounded-2xl w-32 sm:w-44 md:w-52 lg:w-56 ml-auto md:ml-0"
+			/>
+		</a>
+	</div>
+	<div class="card card-right card-continue-top card-to-left">
+		<div class="flex justify-between mb-1 flex-row-reverse">
+			<h3>Payments Team - JustWalkout Stores</h3>
+			<p class="team-date">Dec 2022 - Mar 2023</p>
+		</div>
+		<b>SDE-2</b> managing the payment infrastructure for Amazon Go and third party JustWalkOut
+		stores.<br />
+		Affected by the <b>layoff of whole India vertical</b> due to restructuring of business.
+	</div>
+	<div class="card card-main card-left card-from-right card-continue-bottom">
 		<a
 			href="https://iongroup.com/"
-			class="font-sans flex flex-col gap-3 md:flex-row md:justify-between pt-2 md:pt-4"
+			class="font-sans flex flex-col gap-3 md:flex-row md:justify-between"
 		>
 			<div>
-				<p>2016 - Present</p>
+				<p>2016 - 2022</p>
 				<h2>ION Group</h2>
 			</div>
 			<img
@@ -35,6 +115,16 @@
 			<p class="team-date">Feb 2020 - Present</p>
 		</div>
 		<ul>
+			<li>
+				Responsible for development, deployment and maintenance of public Xtract application on <b
+					>AWS</b
+				>
+				and <b>Redhat OpenShift</b>
+			</li>
+			<li>
+				Keyword based search on documents and deals using <b>OpenSearch</b> and Document matching and
+				approvals using custom tokenization of document content
+			</li>
 			<li>
 				Document management using <b>AWS S3</b> and <b>MongoDB</b> with real-time integration with
 				Microsoft <b>SharePoint</b> using Microsoft Graph API, <b>RestAPI</b>, and <b>webhooks</b>
@@ -101,7 +191,7 @@
 	<div class="card card-main card-right card-from-left card-end">
 		<a
 			href="http://dtu.ac.in/"
-			class="font-sans flex flex-col gap-3 md:flex-row-reverse md:justify-between pt-2 md:pt-4"
+			class="font-sans flex flex-col gap-3 md:flex-row-reverse md:justify-between"
 		>
 			<div class="flex flex-col gap-y-0 md:gap-y-2">
 				<p>2012-2016</p>

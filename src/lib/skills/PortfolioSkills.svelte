@@ -1,37 +1,5 @@
 <script lang="ts">
-	import angular from './angular.svg';
-	import ansible from './ansible.svg';
-	import css from './css3.svg';
-	import docker from './docker.svg';
-	import html from './html5.svg';
-	import intellij from './intellij.svg';
-	import java from './java.svg';
-	import javascript from './javascript.png';
-	import jenkins from './jenkins.svg';
-	import mongodb from './mongodb.svg';
-	import python from './python.svg';
-	import sql from './SQL.webp';
-	import svelte from './svelte.svg';
-	import typescript from './typescript.svg';
-	import vscode from './vscode.svg';
-
-	const skills = [
-		{ name: 'Java', icon: java },
-		{ name: 'Python', icon: python },
-		{ name: 'TypeScript', icon: typescript },
-		{ name: 'JavaScript', icon: javascript },
-		{ name: 'HTML', icon: html },
-		{ name: 'CSS', icon: css },
-		{ name: 'Svelte', icon: svelte },
-		{ name: 'Angular', icon: angular },
-		{ name: 'Relational Databases', icon: sql },
-		{ name: 'MongoDB', icon: mongodb },
-		{ name: 'Docker', icon: docker },
-		{ name: 'Jenkins', icon: jenkins },
-		{ name: 'Ansible', icon: ansible },
-		{ name: 'IntelliJ IDEA', icon: intellij },
-		{ name: 'Visual Studio Code', icon: vscode }
-	];
+	import { SKILLS } from '../variables';
 </script>
 
 <div>
@@ -43,7 +11,7 @@
 	</div>
 
 	<div id="skills-matrix" class="mx-auto grid gap-12">
-		{#each skills as skill}
+		{#each SKILLS as skill}
 			<img src={skill.icon} title={skill.name} alt={skill.name} />
 		{/each}
 	</div>
