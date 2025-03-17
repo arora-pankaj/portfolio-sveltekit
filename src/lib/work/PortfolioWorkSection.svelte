@@ -1,6 +1,6 @@
 <script lang="ts">
-	import amazonLogo from './Amazon-Logo.png';
-	import ionLogo from './ION-Logo.png';
+	import amazonLogo from './Amazon-logo.png';
+	import ionLogo from './ION-logo.png';
 	import dtuLogo from './DTU-logo.webp';
 	let innerWidth = 0;
 </script>
