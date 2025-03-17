@@ -1,8 +1,9 @@
 import { invalid } from '@sveltejs/kit';
 import mailgun from 'mailgun-js';
-import { env } from '../lib/variables.js';
+import { ENV } from '../lib/variables.js';
 
-const mg = mailgun({ apiKey: env.mailgunApiKey, domain: env.mailgunDomain });
+/** @type {mailgun.Mailgun} */
+let _mailgunInstance;
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -18,17 +19,31 @@ export const actions = {
 			return invalid(400, { error: true });
 		}
 
-		const response = await mg.messages().send({
-			from: 'Portfolio Message <messages@thispankaj.com>',
-			to: 'thispankajarora@gmail.com',
-			'h:Reply-To': email?.toString(),
-			subject: 'Message from ' + email?.toString(),
-			html: createHtmlMessage(email?.toString(), phone?.toString(), message?.toString())
-		});
+		const response = withMailGun((mailgun) =>
+			mailgun.messages().send({
+				from: 'Portfolio Message <messages@thispankaj.com>',
+				to: 'thispankajarora@gmail.com',
+				'h:Reply-To': email?.toString(),
+				subject: 'Message from ' + email?.toString(),
+				html: createHtmlMessage(email?.toString(), phone?.toString(), message?.toString())
+			})
+		);
 		console.log(response);
 
 		return { error: false };
 	}
+};
+
+const withMailGun = (
+	/** @type {(mailgun: mailgun.Mailgun) => Promise<any>} */ executeWithMailGun
+) => {
+	if (!ENV.mailgunApiKey || !ENV.mailgunDomain) {
+		return null;
+	}
+	if (!_mailgunInstance) {
+		_mailgunInstance = mailgun({ apiKey: ENV.mailgunApiKey, domain: ENV.mailgunDomain });
+	}
+	return executeWithMailGun(_mailgunInstance);
 };
 
 const createHtmlMessage = (

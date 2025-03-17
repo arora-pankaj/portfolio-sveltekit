@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import { PROFILE_NAME, PROFILE_DESCRIPTION, PROFILE_TITLES } from '../lib/variables.js';
 	import PortfolioHeader from '../lib/header/PortfolioHeader.svelte';
 	import InViewContainer from '../lib/InViewContainer.svelte';
 	import SlidingTextBlocks from '../lib/SlidingTextBlocks.svelte';
@@ -18,8 +19,8 @@
 </script>
 
 <svelte:head>
-	<title>Pankaj Arora</title>
-	<meta name="description" content="Pankaj Arora Dev Portfolio" />
+	<title>{PROFILE_NAME}</title>
+	<meta name="description" content={PROFILE_DESCRIPTION} />
 </svelte:head>
 
 <PortfolioHeader />
@@ -28,12 +29,9 @@
 	<section id="page-top">
 		<InViewContainer on:InViewUpdate={(e) => updateCurrentSection(e, 'page-top')} />
 		<div class="font-mono text-sm sm:text-xl">Hey there! This is</div>
-		<div class="font-arizonia text-4xl sm:text-6xl mt-4 mb-8">Pankaj Arora</div>
+		<div class="font-arizonia text-4xl sm:text-6xl mt-4 mb-8">{PROFILE_NAME}</div>
 		<div class="font-mono text-xs sm:text-lg">
-			<SlidingTextBlocks
-				slidingInternal={100}
-				textBlocks={['A Full Stack Engineer', 'A Java Developer', 'A DevOps Engineer']}
-			/>
+			<SlidingTextBlocks slidingInternal={100} textBlocks={PROFILE_TITLES} />
 		</div>
 	</section>
 
@@ -63,8 +61,8 @@
 </main>
 
 <footer class="max-w-xl mx-auto text-center leading-tight text-xs my-1 md:my-3">
-	<div>Designed & Built by Pankaj Arora</div>
-	<div>© Copyright 2022. All Rights Reserved</div>
+	<div>Designed & Built by {PROFILE_NAME}</div>
+	<div>© Copyright 2023. All Rights Reserved</div>
 </footer>
 
 <style>

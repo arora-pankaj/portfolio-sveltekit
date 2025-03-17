@@ -1,20 +1,16 @@
 <script>
 	import { tweened } from 'svelte/motion';
 	import { currentSection } from '../../lib/stores';
-	import { socialMediaProfiles } from '../variables';
-	import profilePic from './profile-pic.png';
-	import downArrow from './down-arrow.svg';
+	import { PROFILE_IMAGE } from '../variables';
 
 	const headerTranslate = tweened(0, { duration: 200 });
 	let scrollY = 0;
 	let prevScrollY = 0;
 	let showBurgerMenu = false;
-	let showSocialProfiles = false;
 
 	$: {
 		if (scrollY > 1 && scrollY > prevScrollY) {
 			showBurgerMenu = false;
-			showSocialProfiles = false;
 			headerTranslate.set(-4.5);
 		} else {
 			headerTranslate.set(0);
@@ -25,16 +21,12 @@
 	const toggleBurgerMenu = () => {
 		showBurgerMenu = !showBurgerMenu;
 	};
-
-	const toggleSocialProfiles = () => {
-		showSocialProfiles = !showSocialProfiles;
-	};
 </script>
 
 <svelte:window bind:scrollY />
 <header
 	id="header"
-	class="font-mono fixed top-0 left-0 z-50 w-screen h-auto m-0 p-0 flex justify-center"
+	class="font-mono fixed top-0 left-0 z-50 w-screen h-auto m-0 p-0 flex justify-center {(scrollY > 50) ? 'with-background shadow-lg rounded-b-3xl border border-gray-300' : ''}"
 	style="transform: translateY({$headerTranslate}rem);"
 >
 	<div
@@ -52,7 +44,7 @@
 		class="flex flex-row items-center justify-between max-w-2xl h-16 m-0 p-0 gap-x-8 md:max-w-4xl md:gap-x-32"
 	>
 		<a href="#page-top" class="relative flex flex-row items-center justify-center h-full">
-			<img src={profilePic} alt="Hand wave emoji" class="w-12 h-12 mr-2 object-contain rounded-full" />
+			<img src={PROFILE_IMAGE} alt="Hand wave emoji" class="w-12 h-12 mr-2 object-contain rounded-full" />
 		</a>
 
 		<ul
@@ -74,36 +66,6 @@
 			</li>
 		</ul>
 	</nav>
-
-	<div
-		class="fixed h-fit top-0 right-0 z-50 mx-6 mt-3 rounded-full shadow-md md:relative md:mx-3"
-		style="background: var(--background-primary);"
-	>
-		<div
-			id="social-profile-arrow"
-			class="cursor-pointer select-none transition-all"
-			class:active={showSocialProfiles}
-			on:click={toggleSocialProfiles}
-		>
-			<img src={downArrow} alt="Social media profiles" class="w-10 h-10 object-contain" />
-		</div>
-		<div
-			id="social-profiles"
-			class="my-3 gap-5 flex flex-col justify-center items-center"
-			class:active={showSocialProfiles}
-		>
-			{#each socialMediaProfiles as profile}
-				<a href={profile.url} class="rounded-full" target="_blank">
-					<img
-						src={profile.icon}
-						alt={profile.name}
-						class="h-8 w-8 rounded-full"
-						style="background-color: {profile.backgroundColor};"
-					/>
-				</a>
-			{/each}
-		</div>
-	</div>
 </header>
 
 <style>
@@ -111,6 +73,10 @@
 		font-weight: 600;
 		font-size: 1.5rem;
 		color: var(--text-secondary);
+	}
+
+	#header.with-background {
+		background-color: var(--background-primary);
 	}
 
 	#header a {
@@ -185,15 +151,5 @@
 	#burger.active span:nth-child(3) {
 		top: 2rem;
 		transform: rotate(-135deg);
-	}
-
-	#social-profile-arrow.active {
-		transform: rotate(180deg);
-	}
-	#social-profiles {
-		display: none;
-	}
-	#social-profiles.active {
-		display: flex;
 	}
 </style>
