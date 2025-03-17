@@ -21,14 +21,7 @@
 </script>
 
 <div class="flex flex-col gap-2 font-mono" style="color: var(--text-primary);">
-	<!-- <div
-		class="text-center text-2xl sm:text-3xl font-bold tracking-wider"
-		style="color: var(--text-secondary);"
-	>
-		Get In Touch
-	</div> -->
-
-	<div class="flex flex-col md:flex-row items-center justify-center p-4">
+	<div class="flex flex-col md:flex-row items-center justify-center">
 		<!-- Left Side -->
 		<div>
 			<div
@@ -37,12 +30,12 @@
 			>
 				Connect
 			</div>
-			<div class="my-2 flex flex-row md:flex-col items-center justify-center gap-6">
+			<div class="my-2 flex flex-col items-center justify-center gap-6">
 				{#each SOCIAL_MEDIA_PROFILES as profile}
 					<a
 						href={profile.url}
 						target="_blank"
-						class="flex flex-col md:flex-row items-center justify-center px-2 rounded-xl"
+						class="flex flex-row items-center justify-center px-2 rounded-xl"
 					>
 						<div class="h-8 w-8 rounded-full">
 							<img
